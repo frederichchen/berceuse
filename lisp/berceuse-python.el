@@ -12,32 +12,36 @@
 ;;; Code:
 
 (berceuse-require-packages '(anaconda-mode py-yapf))
+
 (when (boundp 'company-backends)
   (berceuse-require-package 'company-anaconda)
   (add-to-list 'company-backends 'company-anaconda))
 
+(defun berceuse-python-mode-config ()
+  (setq python-indent-offset 4
+	python-indent 4
+	indent-tabs-mode nil
+	default-tab-width 4
+
+	;; 设置 run-python 的参数
+	python-shell-interpreter "ipython"
+	python-shell-interpreter-args "-i"
+	python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+	python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+	python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
+	python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))\n"
+	python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"
+	confirm-kill-processes nil)
+
+  (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+  (hs-minor-mode t)                     ;开启 hs-minor-mode 以支持代码折叠
+  (auto-fill-mode 0)                    ;关闭 auto-fill-mode，拒绝自动折行
+  (hl-line-mode t))                     ;开启 hl-line-mode 对当前行进行高亮
+
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 (add-hook 'python-mode-hook 'py-yapf-enable-on-save)
-
-;; Initially Use python3 as python-shell-interpreter.
-;; After that, we can use ipython by commenting the following statement and uncommenting the three lines below.
-(setq python-shell-interpreter "python3")
-
-;; Avoid weird output for ipython when executing run-python command
-;(defvar ipython-path (or (locate-file "ipython" exec-path) (locate-file "ipython3" exec-path)))
-;(setq python-shell-interpreter ipython-path
-      ;python-shell-interpreter-args "--simple-prompt -i")
-
-(with-eval-after-load 'python
-  (defun python-shell-completion-native-try ()
-    "Return non-nil if can trigger native completion."
-    (let ((python-shell-completion-native-enable t)
-          (python-shell-completion-native-output-timeout
-           python-shell-completion-native-try-output-timeout))
-      (python-shell-completion-native-get-completions
-       (get-buffer-process (current-buffer))
-       nil "_"))))
+(add-hook 'python-mode-hook 'berceuse-python-mode-config)
 
 (provide 'berceuse-python)
 
