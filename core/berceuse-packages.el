@@ -26,6 +26,7 @@
 
 (defvar berceuse-packages
   '(beacon
+    dash-functional
     diminish
     flycheck
     flycheck-color-mode-line

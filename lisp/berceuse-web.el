@@ -9,10 +9,7 @@
 
 ;; Configurations for web development, I use web-mode, rainbow-mode, sass-mode, scss-mode, css-eldoc and emmet-mode.
 
-;; Rainbow mode for css color.
-(berceuse-require-packages '(rainbow-mode sass-mode scss-mode css-eldoc emmet-mode web-mode))
-(dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook web-mode-hook))
-  (add-hook hook 'rainbow-mode))
+(berceuse-require-packages '(sass-mode scss-mode css-eldoc emmet-mode web-mode))
 
 ;; SASS and SCSS
 (require 'sass-mode)
@@ -37,13 +34,19 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
-(setq web-mode-enable-auto-pairing t)
-(setq web-mode-enable-css-colorization t)
-(setq web-mode-enable-current-element-highlight t)
-(setq web-mode-enable-current-column-highlight t)
+(defun berceuse-web-mode-config ()
+  (setq web-mode-markup-indent-offset 2
+	web-mode-css-indent-offset 2
+	web-mode-code-indent-offset 2
+	web-mode-style-padding 2
+	web-mode-script-padding 2
+	web-mode-enable-auto-pairing t
+	web-mode-enable-css-colorization t
+	web-mode-enable-current-element-highlight t
+	web-mode-enable-current-column-highlight t
+	web-mode-enable-css-colorization t
+	web-mode-enable-auto-pairing nil))
+(add-hook 'web-mode-hook 'berceuse-web-mode-config)
 
 ;; Emmet Mode Configurations
 (require 'emmet-mode)
