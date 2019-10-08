@@ -21,11 +21,12 @@
 
 ;;; Programming languages support
 ;; (require 'berceuse-coffee)
+(require 'berceuse-cperl) ;; Configurations for C & Perl
 (require 'berceuse-elisp)
 (require 'berceuse-javascript)
+;; (require 'berceuse-julia)
 (require 'berceuse-latex)  ;; Once enabled, you have to edit the berceuse-latex.el file in the list directory.
 (require 'berceuse-org) ;; Org-mode helps you keep TODO lists, notes and more
-(require 'berceuse-cperl) ;; Configurations for C & Perl
 (require 'berceuse-python)
 (require 'berceuse-ruby)
 (require 'berceuse-scheme) ;; Configurations for scheme programming, you must edit berceuse-scheme.el to customize your scheme intepreter.

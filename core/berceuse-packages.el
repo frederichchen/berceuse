@@ -14,11 +14,23 @@
 (require 'cl)
 (require 'package)
 
-(setq package-archives
-      '(("gnu"         . "http://elpa.gnu.org/packages/")
-        ("org"         . "http://orgmode.org/elpa/")
-        ("melpa"       . "http://melpa.org/packages/")
-        ))
+(defvar switch-melpa-mirror nil
+  "Whether to switch to the melpa mirror in China.")
+(if (and (not noninteractive)
+	 (not (file-exists-p (file-truename "~/.emacs.d/elpa")))
+	 (y-or-n-p "Switch to faster package repositories in China temporarily? "))
+    (setq switch-melpa-mirror t))
+
+(if switch-melpa-mirror
+     (setq package-archives
+      '(("gnu"          . "https://mirrors.163.com/elpa/gnu/")
+        ("melpa"        . "https://mirrors.163.com/elpa/melpa/")
+        ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")))
+  (setq package-archives
+	'(("gnu"          . "https://elpa.gnu.org/packages/")
+	  ("melpa"        . "https://melpa.org/packages/")
+	  ("melpa-stable" . "https://stable.melpa.org/packages/"))))
+
 
 ;; set package-user-dir to be relative to Berceuse install path
 (setq package-user-dir (expand-file-name "plugins" berceuse-dir))
