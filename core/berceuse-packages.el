@@ -11,7 +11,6 @@
 
 ;;; Code:
 
-(require 'cl)
 (require 'package)
 
 (defvar switch-melpa-mirror nil
@@ -54,7 +53,11 @@
 
 (defun berceuse-packages-installed-p ()
   "Check if all packages in `berceuse-packages' are installed."
-  (every #'package-installed-p berceuse-packages))
+  (catch 'all-installed
+    (dolist (pack berceuse-packages)
+      (when (not (package-installed-p pack))
+	(throw 'all-installed nil)))
+    t))
 
 (defun berceuse-require-package (package)
   "Install PACKAGE unless already installed."
