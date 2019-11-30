@@ -9,6 +9,8 @@
 
 ;; Configurations for web development, I use web-mode, rainbow-mode, sass-mode, scss-mode, css-eldoc and emmet-mode.
 
+;;; Code:
+
 (berceuse-require-packages '(sass-mode scss-mode css-eldoc emmet-mode web-mode))
 
 ;; SASS and SCSS
@@ -34,19 +36,20 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
-(defun berceuse-web-mode-config ()
-  (setq web-mode-markup-indent-offset 2
-	web-mode-css-indent-offset 2
-	web-mode-code-indent-offset 2
-	web-mode-style-padding 2
-	web-mode-script-padding 2
-	web-mode-enable-auto-pairing t
-	web-mode-enable-css-colorization t
-	web-mode-enable-current-element-highlight t
-	web-mode-enable-current-column-highlight t
-	web-mode-enable-css-colorization t
-	web-mode-enable-auto-pairing nil))
-(add-hook 'web-mode-hook 'berceuse-web-mode-config)
+
+(setq web-mode-markup-indent-offset 2
+      web-mode-css-indent-offset 2
+      web-mode-code-indent-offset 2
+      web-mode-style-padding 2
+      web-mode-script-padding 2
+      web-mode-enable-auto-pairing t
+      web-mode-enable-css-colorization t
+      web-mode-enable-current-element-highlight t
+      web-mode-enable-current-column-highlight t
+      web-mode-enable-css-colorization t)
+(setq web-mode-engines-alist
+      '(("jinja2"    . "\\.jinja2\\'")
+	("django"    . "\\.html\\'")))
 
 ;; Emmet Mode Configurations
 (require 'emmet-mode)
