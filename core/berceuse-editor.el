@@ -19,6 +19,13 @@
 (setq make-backup-files nil)
 (setq tab-width 4)
 
+;; Set coding system
+(prefer-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+(set-language-environment 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+
 ;; apply builtin windmove to use shift + arrow keys to switch between visible buffers
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
