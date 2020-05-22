@@ -39,8 +39,8 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; use monokai as the default theme
-(load-theme 'monokai t)
+;; load the required theme
+(berceuse-load-theme berceuse-theme t)
 
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
@@ -57,6 +57,10 @@
 (require 'which-key)
 (which-key-mode +1)
 (diminish 'which-key-mode)
+
+;; use rainbow-delimiters to colorize parenthesis
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(diminish 'rainbow-delimiters-mode)
 
 (provide 'berceuse-face)
 

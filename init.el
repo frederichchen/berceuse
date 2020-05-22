@@ -48,7 +48,8 @@
   (make-directory berceuse-savefile-dir))
 
 ;; set custom file path
-(setq custom-file (expand-file-name "custom.el" berceuse-personal-dir))
+(defconst custom-file (expand-file-name "custom.el" berceuse-dir))
+(defconst berceuse-custom-example-file (expand-file-name "custom-example.el" berceuse-dir))
 
 ;; add Berceuse's directories to Emacs's load-path
 (add-to-list 'load-path berceuse-core-dir)

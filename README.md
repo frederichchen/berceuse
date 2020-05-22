@@ -1,12 +1,12 @@
 # Introduction（简介）
 
-This is my .emacs configuration for daily use. Referred to the configuration of [Prelude](http://batsov.com/prelude/) & [Steve Purcell](https://github.com/purcell/emacs.d), I have made some modifications, including replacing paredit-mode with smartparens, ruby-mode with enh-ruby-mode and adding Julia language support etc. 
+This is my .emacs configuration for daily use. Referred to the configuration of [Prelude](http://batsov.com/prelude/) & [Steve Purcell](https://github.com/purcell/emacs.d)& [seagle0128](https://github.com/seagle0128/.emacs.d) , I have made some modifications, including replacing paredit-mode with smartparens, ruby-mode with enh-ruby-mode and adding Julia language support etc. 
 
-这是我本人的 .emacs 文件，在  [Prelude](http://batsov.com/prelude/) 和 [Steve Purcell](https://github.com/purcell/emacs.d) 的基础上做了一些修改，比如用 smartparens 替代了 paredit-mode ，用 enh-ruby-mode 替代了 ruby-mode ，加入 Julia 语言支持等。
+这是我本人的 .emacs 文件，在  [Prelude](http://batsov.com/prelude/) 和 [Steve Purcell](https://github.com/purcell/emacs.d) 以及 [seagle0128](https://github.com/seagle0128/.emacs.d) 的基础上做了一些修改，比如用 smartparens 替代了 paredit-mode ，用 enh-ruby-mode 替代了 ruby-mode ，加入 Julia 语言支持等。
 
-For appearance, I use the [molokai theme](https://github.com/hbin/molokai-theme).
+For appearance, I use the [doom monokai theme](https://github.com/hlissner/emacs-doom-themes).
 
-在外观方面，我使用了 [molokai主题](https://github.com/hbin/molokai-theme) 。
+在外观方面，我使用了 [doom-themes中的molokai主题](https://github.com/hlissner/emacs-doom-themes) 。
 
 
 # Requirements（要求）

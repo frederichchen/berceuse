@@ -12,24 +12,29 @@
 ;;; Code:
 
 (require 'package)
+(require 'berceuse-custom)
+(require 'berceuse-funcs)
 
-(defvar switch-melpa-mirror nil
-  "Whether to switch to the melpa mirror in China.")
-(if (and (not noninteractive)
-	 (not (file-exists-p (file-truename "~/.emacs.d/elpa")))
-	 (y-or-n-p "Switch to faster package repositories in China temporarily? "))
-    (setq switch-melpa-mirror t))
+;; Load `custom-file'
+(when (and (file-exists-p berceuse-custom-example-file)
+           (not (file-exists-p custom-file)))
+  ;; At the first startup copy `custom-file' from the example
+  (copy-file berceuse-custom-example-file custom-file)
 
-(if switch-melpa-mirror
-     (setq package-archives
-      '(("gnu"          . "https://mirrors.163.com/elpa/gnu/")
-        ("melpa"        . "https://mirrors.163.com/elpa/melpa/")
-        ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")))
-  (setq package-archives
-	'(("gnu"          . "https://elpa.gnu.org/packages/")
-	  ("melpa"        . "https://melpa.org/packages/")
-	  ("melpa-stable" . "https://stable.melpa.org/packages/"))))
+  ;; Select the package archives
+  (if (or (executable-find "curl") (executable-find "wget"))
+      (progn
+        ;; Get and select the fastest package archives automatically
+        (message "Doing some tests to choose the fastest mirror, please wait for a moment...")
+        (berceuse-set-package-archives (berceuse-test-package-archives)))
+    (berceuse-set-package-archives
+     (intern
+      (ido-completing-read
+       "Select package archives: "
+       (mapcar #'symbol-name
+               (mapcar #'car centaur-package-archives-alist)))))))
 
+(and (file-readable-p custom-file) (load custom-file))
 
 ;; set package-user-dir to be relative to Berceuse install path
 (setq package-user-dir (expand-file-name "plugins" berceuse-dir))
@@ -42,9 +47,10 @@
     flycheck
     flycheck-color-mode-line
     magit
-    monokai-theme
+    doom-themes
     org
     projectile
+    rainbow-delimiters
     smartparens
     which-key
     whitespace-cleanup-mode

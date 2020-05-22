@@ -5,3 +5,5 @@ plugins/
 projectile-bookmarks.eld
 savefile/
 snippets/
+transient/
+/custom.el
