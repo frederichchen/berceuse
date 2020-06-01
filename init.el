@@ -37,6 +37,8 @@
   "This directory contains lots of berceuse-xxx.el files to customize the plugins.")
 (defvar berceuse-personal-dir (expand-file-name "personal" berceuse-dir)
   "This directory is for your personal configuration.")
+(unless (file-directory-p berceuse-personal-dir)
+  (make-directory berceuse-personal-dir))
 (defvar berceuse-savefile-dir (expand-file-name "savefile" berceuse-dir)
   "This folder stores all the automatically generated save/history-files.")
 (defvar berceuse-third-party-dir (expand-file-name "site-lisp" berceuse-dir)
