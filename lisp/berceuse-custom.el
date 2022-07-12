@@ -12,35 +12,32 @@
 ;;; Code:
 
 (defcustom berceuse-package-archives-alist
-  (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-		      (not (gnutls-available-p))))
-	 (proto (if no-ssl "http" "http")))
-    `(,(cons 'melpa
-	     `(,(cons "gnu"   (concat proto "://elpa.gnu.org/packages/"))
-	       ,(cons "melpa" (concat proto "://melpa.org/packages/"))))
-      ,(cons 'melpa-mirror
-	     `(,(cons "gnu"   (concat proto "://elpa.gnu.org/packages/"))
-	       ,(cons "melpa" (concat proto "://www.mirrorservice.org/sites/melpa.org/packages/"))))
-      ,(cons 'emacs-china
-	     `(,(cons "gnu"   (concat proto "://elpa.emacs-china.org/gnu/"))
-	       ,(cons "melpa" (concat proto "://elpa.emacs-china.org/melpa/"))))
-      ,(cons 'netease
-	     `(,(cons "gnu"   (concat proto "://mirrors.163.com/elpa/gnu/"))
-	       ,(cons "melpa" (concat proto "://mirrors.163.com/elpa/melpa/"))))
-      ,(cons 'ustc
-	     `(,(cons "gnu"   (concat proto "://mirrors.ustc.edu.cn/elpa/gnu/"))
-	       ,(cons "melpa" (concat proto "://mirrors.ustc.edu.cn/elpa/melpa/"))))
-      ,(cons 'tencent
-	     `(,(cons "gnu"   (concat proto "://mirrors.cloud.tencent.com/elpa/gnu/"))
-	       ,(cons "melpa" (concat proto "://mirrors.cloud.tencent.com/elpa/melpa/"))))
-      ,(cons 'tuna
-	     `(,(cons "gnu"   (concat proto "://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/"))
-	       ,(cons "melpa" (concat proto "://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))))))
-  "The package archives group list."
+  '((melpa    . (("gnu"    . "http://elpa.gnu.org/packages/")
+                 ("nongnu" . "http://elpa.nongnu.org/nongnu/")
+                 ("melpa"  . "http://melpa.org/packages/")))
+    (emacs-cn . (("gnu"    . "http://1.15.88.122/gnu/")
+                 ("nongnu" . "http://1.15.88.122/nongnu/")
+                 ("melpa"  . "http://1.15.88.122/melpa/")))
+    (bfsu     . (("gnu"    . "http://mirrors.bfsu.edu.cn/elpa/gnu/")
+                 ("nongnu" . "http://mirrors.bfsu.edu.cn/elpa/nongnu/")
+                 ("melpa"  . "http://mirrors.bfsu.edu.cn/elpa/melpa/")))
+    (netease  . (("gnu"    . "http://mirrors.163.com/elpa/gnu/")
+                 ("nongnu" . "http://mirrors.163.com/elpa/nongnu/")
+                 ("melpa"  . "http://mirrors.163.com/elpa/melpa/")))
+    (sjtu     . (("gnu"    . "http://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")
+                 ("nongnu" . "http://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/nongnu/")
+                 ("melpa"  . "http://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")))
+    (tuna     . (("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                 ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+                 ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+    (ustc     . (("gnu"    . "http://mirrors.ustc.edu.cn/elpa/gnu/")
+                 ("nongnu" . "http://mirrors.ustc.edu.cn/elpa/nongnu/")
+                 ("melpa"  . "http://mirrors.ustc.edu.cn/elpa/melpa/"))))
+  "A list of the package archives."
   :group 'berceuse
   :type '(alist :key-type (symbol :tag "Archive group name")
-		:value-type (alist :key-type (string :tag "Archive name")
-				   :value-type (string :tag "URL or directory name"))))
+                :value-type (alist :key-type (string :tag "Archive name")
+                                   :value-type (string :tag "URL or directory name"))))
 
 (defcustom berceuse-package-archives 'melpa
   "Set package archives from which to fetch."
