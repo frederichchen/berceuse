@@ -1,9 +1,11 @@
 ;;; berceuse-packages.el --- package management
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
-;; Created: 24 July 2018
-;; Berceuse uses plenty of codes from Prelude(https://github.com/bbatsov/prelude) and
-;; Steve Purcell's Emacs config(https://github.com/purcell/emacs.d) . Thanks, Steve & Bozhidar!
+;; Created: 16 Feb 2022
+;; Berceuse uses plenty of codes from
+;; Prelude(https://github.com/bbatsov/prelude)
+;; Steve Purcell's Emacs configuration(https://github.com/purcell/emacs.d)
+;; Seagle0128's Emacs configuration(https://github.com/seagle0128/.emacs.d)
 
 ;;; Commentary:
 
@@ -43,7 +45,6 @@
 (defvar berceuse-packages
   '(beacon
     dash-functional
-    diminish
     flycheck
     flycheck-color-mode-line
     magit
@@ -52,6 +53,7 @@
     projectile
     rainbow-delimiters
     smartparens
+    use-package
     which-key
     whitespace-cleanup-mode
     )
@@ -164,6 +166,19 @@ PACKAGE is installed only if not already present.  The file is opened in MODE."
      (unless (package-installed-p package)
        (berceuse-auto-install extension package mode))))
  berceuse-auto-install-alist)
+
+;; Initialize use-package on non-Linux platforms
+(unless (package-installed-p 'use-package)
+   (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+(setq use-package-always-defer t)
+(setq use-package-always-demand nil)
+(setq use-package-expand-minimally t)
+(setq use-package-verbose t)
+
+(use-package command-log-mode)
 
 (provide 'berceuse-packages)
 

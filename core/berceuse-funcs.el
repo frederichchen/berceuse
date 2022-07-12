@@ -1,9 +1,11 @@
 ;;; berceuse-funcs.el --- some frequently used functions
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
-;; Created: 20 May 2020
-;; Berceuse uses plenty of codes from Prelude(https://github.com/bbatsov/prelude) and
-;; Steve Purcell's Emacs config(https://github.com/purcell/emacs.d) . Thanks, Steve & Bozhidar!
+;; Created: 16 Feb 2022
+;; Berceuse uses plenty of codes from
+;; Prelude(https://github.com/bbatsov/prelude)
+;; Steve Purcell's Emacs configuration(https://github.com/purcell/emacs.d)
+;; Seagle0128's Emacs configuration(https://github.com/seagle0128/.emacs.d)
 
 ;;; Commentary:
 

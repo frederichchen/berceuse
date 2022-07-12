@@ -12,7 +12,7 @@
 
 ;;; Code:
 
-;; (require 'berceuse-ido) ;; Super charges Emacs completion for C-x C-f and more
+;;(require 'berceuse-ido) ;; Super charges Emacs completion for C-x C-f and more
 (require 'berceuse-ivy) ;; A mighty modern alternative to ido
 (require 'berceuse-company) ;; An auto complete framework, alternative to auto-complete
 (require 'berceuse-yasnippet)
@@ -26,6 +26,7 @@
 (require 'berceuse-javascript)
 ;; (require 'berceuse-julia)
 (require 'berceuse-latex)  ;; Once enabled, you have to edit the berceuse-latex.el file in the list directory.
+(require 'berceuse-lsp) ;; Basic configuration for lsp-mode
 (require 'berceuse-org) ;; Org-mode helps you keep TODO lists, notes and more
 (require 'berceuse-python)
 (require 'berceuse-ruby)

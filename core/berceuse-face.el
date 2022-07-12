@@ -1,9 +1,11 @@
 ;;; berceuse-face.el --- Set the ui and theme of Emacs
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
-;; Created: 24 July 2018
-;; Berceuse uses plenty of codes from Prelude(https://github.com/bbatsov/prelude) and
-;; Steve Purcell's Emacs config(https://github.com/purcell/emacs.d) . Thanks, Steve & Bozhidar!
+;; Created: 16 Feb 2022
+;; Berceuse uses plenty of codes from
+;; Prelude(https://github.com/bbatsov/prelude)
+;; Steve Purcell's Emacs configuration(https://github.com/purcell/emacs.d)
+;; Seagle0128's Emacs configuration(https://github.com/seagle0128/.emacs.d)
 
 ;;; Commentary:
 
@@ -50,17 +52,20 @@
 					"%b"))))
 
 ;; show the cursor when moving after big movements in the window
-(require 'beacon)
-(beacon-mode +1)
+(use-package beacon
+  :diminish
+  :custom (beacon-mode 1))
 
 ;; show available keybindings after you start typing
-(require 'which-key)
-(which-key-mode +1)
-(diminish 'which-key-mode)
+(use-package which-key
+  :diminish
+  :custom (which-key-mode 1))
 
 ;; use rainbow-delimiters to colorize parenthesis
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-(diminish 'rainbow-delimiters-mode)
+(use-package rainbow-delimiters
+  :diminish
+  :hook
+  (prog-mode-hook . rainbow-delimiters-mode))
 
 (provide 'berceuse-face)
 

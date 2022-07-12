@@ -1,9 +1,11 @@
 ;;; berceuse-org.el --- org-mode configuration.
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
-;; Created: 24 July 2018
-;; Berceuse uses plenty of codes from Prelude(https://github.com/bbatsov/prelude) and
-;; Steve Purcell's Emacs config(https://github.com/purcell/emacs.d) . Thanks, Steve & Bozhidar!
+;; Created: 23 Feb 2022
+;; Berceuse uses plenty of codes from
+;; Prelude(https://github.com/bbatsov/prelude)
+;; Steve Purcell's Emacs configuration(https://github.com/purcell/emacs.d)
+;; Seagle0128's Emacs configuration(https://github.com/seagle0128/.emacs.d)
 
 ;;; Commentary:
 
@@ -11,20 +13,27 @@
 
 ;;; Code:
 
-(berceuse-require-package 'htmlize)
+(berceuse-require-package 'org-bullets)
 
-(add-to-list 'auto-mode-alist '("\\.org\\’" . org-mode))
-(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
-(setq org-log-done t
-      org-edit-timestamp-down-means-later t
-      org-archive-mark-done nil
-      org-hide-emphasis-markers t
-      org-catch-invisible-edits 'show
-      org-export-coding-system 'utf-8
-      org-export-with-sub-superscripts nil
-      org-fast-tag-selection-single-key 'expert
-      org-html-validation-link nil
-      org-tags-column 80)
+(defun org-mode-setup ()
+  "Set up the 'org-mode initialization hook."
+  (org-indent-mode)
+  (variable-pitch-mode 1)
+  (visual-line-mode 1)
+  (setq truncate-lines nil))
+
+(use-package org
+  :hook (org-mode . org-mode-setup)
+  :config
+  (setq org-ellipsis " ▾"
+	org-log-done t
+	org-tags-column 80))
+
+(use-package org-bullets
+  :after org
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
 (provide 'berceuse-org)
 

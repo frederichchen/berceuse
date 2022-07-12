@@ -1,3 +1,4 @@
+anaconda-mode/
 auto-save-list/
 elpa/
 personal/
@@ -7,3 +8,5 @@ savefile/
 snippets/
 transient/
 /custom.el
+/.lsp-session-v1
+

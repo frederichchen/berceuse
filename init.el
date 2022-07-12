@@ -1,9 +1,11 @@
 ;;; init.el --- Bootstrap Configuration File
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
-;; Created: 24 July 2018
-;; Berceuse uses plenty of codes from Prelude(https://github.com/bbatsov/prelude) and
-;; Steve Purcell's Emacs config(https://github.com/purcell/emacs.d) . Thanks, Steve & Bozhidar!
+;; Created: 16 Feb 2022
+;; Berceuse uses plenty of codes from
+;; Prelude(https://github.com/bbatsov/prelude)
+;; Steve Purcell's Emacs configuration(https://github.com/purcell/emacs.d)
+;; Seagle0128's Emacs configuration(https://github.com/seagle0128/.emacs.d)
 
 ;;; Commentary:
 
@@ -17,7 +19,7 @@
 ;;; Code:
 
 ;; Check the version of GNU Emacs
-(when (version< emacs-version "24.4")
+(when (version< emacs-version "25.1")
   (message "Your Emacs is too old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
 ;; Start the server
@@ -79,6 +81,15 @@
 (when (file-exists-p berceuse-personal-dir)
   (message "Loading personal configuration files in %s..." berceuse-personal-dir)
   (mapc 'load (directory-files berceuse-personal-dir 't "^[^#\.].*el$")))
+
+;; Profile emacs startup
+(add-hook 'emacs-startup-hook
+	  (lambda ()
+	    (message "*** Emacs loaded in %s with %d garbage collections."
+		     (format "%.2f seconds"
+			     (float-time
+			      (time-subtract after-init-time before-init-time)))
+		     gcs-done)))
 
 
 ;;; init.el ends here
