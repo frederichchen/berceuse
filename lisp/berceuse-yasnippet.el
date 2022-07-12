@@ -12,12 +12,15 @@
 ;;; Code:
 
 (berceuse-require-packages '(yasnippet yasnippet-snippets))
-(require 'yasnippet)
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/personal/snippets")
-(yas-global-mode 1)
-(define-key yas-minor-mode-map (kbd "C-<tab>") 'yas-expand)
-(diminish 'yas-global-mode)
-(diminish 'yas-minor-mode)
+
+(use-package yasnippet
+  :diminish
+  :bind
+  (:map yas-minor-mode-map ("C-<tab>" . yas-expand))
+  :config
+  (progn
+    (add-to-list 'yas-snippet-dirs "~/.emacs.d/personal/snippets")
+    (yas-global-mode 1)))
 
 (provide 'berceuse-yasnippet)
 

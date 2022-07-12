@@ -11,9 +11,9 @@
 
 ;;; Code:
 
-(require 'whitespace-cleanup-mode)
-(add-hook 'after-init-hook 'global-whitespace-cleanup-mode)
-(diminish 'whitespace-cleanup-mode)
+(use-package whitespace-cleanup-mode
+  :diminish
+  :hook (after-init . global-whitespace-cleanup-mode))
 
 (provide 'berceuse-whitespace)
 

@@ -29,7 +29,7 @@
 (require 'berceuse-lsp) ;; Basic configuration for lsp-mode
 (require 'berceuse-org) ;; Org-mode helps you keep TODO lists, notes and more
 (require 'berceuse-python)
-(require 'berceuse-ruby)
+;; (require 'berceuse-ruby)
 (require 'berceuse-scheme) ;; Configurations for scheme programming, you must edit berceuse-scheme.el to customize your scheme intepreter.
 (require 'berceuse-web) ;; Configurations for web development including css and emmet
 
