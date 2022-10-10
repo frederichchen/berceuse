@@ -1,9 +1,11 @@
 ;;; berceuse-yasnippet.el --- Configurations for yasnippet
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
-;; Created: 24 July 2018
-;; Berceuse uses plenty of codes from Prelude(https://github.com/bbatsov/prelude) and
-;; Steve Purcell's Emacs config(https://github.com/purcell/emacs.d) . Thanks, Steve & Bozhidar!
+;; Created: 9 Oct 2022
+;; Berceuse uses plenty of codes from
+;; Prelude(https://github.com/bbatsov/prelude)
+;; Steve Purcell's Emacs configuration(https://github.com/purcell/emacs.d)
+;; Seagle0128's Emacs configuration(https://github.com/seagle0128/.emacs.d)
 
 ;;; Commentary:
 
@@ -14,13 +16,15 @@
 (berceuse-require-packages '(yasnippet yasnippet-snippets))
 
 (use-package yasnippet
-  :diminish
+  :hook
+  (after-init . yas-global-mode)
   :bind
-  (:map yas-minor-mode-map ("C-<tab>" . yas-expand))
+  (:map yas-minor-mode-map ("C-<tab>" . yas-expand)))
+
+(use-package yasnippet-snippets
+  :after yasnippet
   :config
-  (progn
-    (add-to-list 'yas-snippet-dirs "~/.emacs.d/personal/snippets")
-    (yas-global-mode 1)))
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/personal/snippets"))
 
 (provide 'berceuse-yasnippet)
 

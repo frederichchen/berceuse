@@ -55,10 +55,6 @@
                                          try-complete-lisp-symbol-partially
                                          try-complete-lisp-symbol))
 
-;; Configuration for builtin eldoc-mode
-(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 
 ;; Configuration for builtin dired: always delete and copy recursively
 (setq dired-recursive-deletes 'always)

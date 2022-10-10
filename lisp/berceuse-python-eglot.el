@@ -1,4 +1,4 @@
-;;; berceuse-python.el --- Configurations for python programming with Anaconda
+;;; berceuse-python-eglot.el --- Configurations for python programming with eglot
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
 ;; Created: 9 Oct 2022
@@ -9,16 +9,16 @@
 
 ;;; Commentary:
 
-;; Basic configurations for python programming with anaconda, yapf etc.
+;; Basic configurations for python programming language with eglot
+;; Prerequisite: you must install pylsp e.g pip install "python-lsp-server[all]"
 
 ;;; Code:
 
-(berceuse-require-packages '(anaconda-mode company-anaconda python-black))
+(berceuse-require-packages '(eglot python-black))
 
 (use-package python
   :hook
-  (python-mode . anaconda-mode)
-  (python-mode . anaconda-eldoc-mode)
+  (python-mode . eglot-ensure)
   :init
   (when (boundp 'company-backends)
     (add-to-list 'company-backends 'company-anaconda))
@@ -32,6 +32,6 @@
   :after python
   :hook (python-mode . python-black-on-save-mode))
 
-(provide 'berceuse-python)
+(provide 'berceuse-python-eglot)
 
-;;; berceuse-python.el ends here
+;;; berceuse-python-eglot.el ends here

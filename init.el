@@ -1,7 +1,7 @@
 ;;; init.el --- Bootstrap Configuration File
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
-;; Created: 16 Feb 2022
+;; Created: 14 July 2022
 ;; Berceuse uses plenty of codes from
 ;; Prelude(https://github.com/bbatsov/prelude)
 ;; Steve Purcell's Emacs configuration(https://github.com/purcell/emacs.d)
@@ -19,7 +19,7 @@
 ;;; Code:
 
 ;; Check the version of GNU Emacs
-(when (version< emacs-version "25.1")
+(when (version< emacs-version "26")
   (message "Your Emacs is too old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
 ;; Start the server

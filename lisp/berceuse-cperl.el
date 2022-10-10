@@ -16,8 +16,8 @@
 (defalias 'perl-mode 'cperl-mode)
 (use-package cperl-mode
   :config
-  (setq c-default-style "linux"
-	c-basic-offset 4
+  (setq cperl-indent-level 4
+	cperl-continued-statement-offset 8
 	cperl-font-lock t
 	cperl-electric-parens nil
 	cperl-electric-linefeed nil

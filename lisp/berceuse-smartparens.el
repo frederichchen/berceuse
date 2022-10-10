@@ -14,6 +14,7 @@
 ;;; Code:
 
 (use-package smartparens
+  :diminish
   :custom (smartparens-global-mode t)
   :init
   (require 'smartparens-config)

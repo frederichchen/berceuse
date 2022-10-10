@@ -1,9 +1,11 @@
 ;;; berceuse-plugins.el --- Choose the plugins you need
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
-;; Created: 24 July 2018
-;; Berceuse uses plenty of codes from Prelude(https://github.com/bbatsov/prelude) and
-;; Steve Purcell's Emacs config(https://github.com/purcell/emacs.d) . Thanks, Steve & Bozhidar!
+;; Created: 14 July 2022
+;; Berceuse uses plenty of codes from
+;; Prelude(https://github.com/bbatsov/prelude)
+;; Steve Purcell's Emacs configuration(https://github.com/purcell/emacs.d)
+;; Seagle0128's Emacs configuration(https://github.com/seagle0128/.emacs.d
 
 ;;; Commentary:
 
@@ -23,14 +25,15 @@
 ;; (require 'berceuse-coffee)
 (require 'berceuse-cperl) ;; Configurations for C & Perl
 (require 'berceuse-elisp)
-(require 'berceuse-javascript)
+;; (require 'berceuse-javascript)
 ;; (require 'berceuse-julia)
-(require 'berceuse-latex)  ;; Once enabled, you have to edit the berceuse-latex.el file in the list directory.
-(require 'berceuse-lsp) ;; Basic configuration for lsp-mode
+;; (require 'berceuse-latex)  ;; Once enabled, you have to edit the berceuse-latex.el file in the list directory.
 (require 'berceuse-org) ;; Org-mode helps you keep TODO lists, notes and more
-(require 'berceuse-python)
-;; (require 'berceuse-ruby)
-(require 'berceuse-scheme) ;; Configurations for scheme programming, you must edit berceuse-scheme.el to customize your scheme intepreter.
+;; (require 'berceuse-python) ;; Basic python programming configuration with anaconda-mode
+(require 'berceuse-python-eglot)  ;; If you want to use eglot for python, you must install the python-lsp-server first
+;; (require 'berceuse-ruby)  ;; Basic ruby programming configuration
+;; (require 'berceuse-ruby-eglot)  ;; If you want to use eglot for ruby, you must install solargraph gem first
+;; (require 'berceuse-scheme) ;; Configurations for scheme programming, you must edit berceuse-scheme.el to customize your scheme intepreter.
 (require 'berceuse-web) ;; Configurations for web development including css and emmet
 
 

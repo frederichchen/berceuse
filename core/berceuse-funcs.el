@@ -112,6 +112,7 @@ Return the fastest package archive."
   (mapc #'disable-theme custom-enabled-themes)
   (load-theme (or (alist-get theme berceuse-theme-alist) theme) t))
 
+
 (provide 'berceuse-funcs)
 
 ;;; berceuse-funcs.el ends here

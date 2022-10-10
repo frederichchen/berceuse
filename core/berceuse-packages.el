@@ -34,7 +34,7 @@
       (ido-completing-read
        "Select package archives: "
        (mapcar #'symbol-name
-               (mapcar #'car centaur-package-archives-alist)))))))
+               (mapcar #'car berceuse-package-archives-alist)))))))
 
 (and (file-readable-p custom-file) (load custom-file))
 
@@ -44,7 +44,7 @@
 
 (defvar berceuse-packages
   '(beacon
-    dash-functional
+    diminish
     flycheck
     flycheck-color-mode-line
     magit
