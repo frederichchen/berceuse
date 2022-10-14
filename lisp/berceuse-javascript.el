@@ -17,15 +17,16 @@
 (berceuse-require-packages '(js2-mode json-mode))
 
 (use-package js2-mode
-  :hook (js2-mode js2-imenu-extras-mode)
+  :mode (("\\.js\\'" . js2-mode)
+	 ("\\.jsx\\'" . js2-jsx-mode))
+  :init (setq js-indent-level 2)
   :config
   (progn
     (setq-default js2-basic-offset 2
 		  js2-bounce-indent-p nil
 		  js2-mode-show-parse-errors nil
 		  js2-mode-show-strict-warnings nil)
-    (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-    (add-to-list 'auto-mode-alist '("\\.pac\\'" . js2-mode))))
+    (add-to-list 'interpreter-mode-alist '("node" . js2-mode))))
 
 (provide 'berceuse-javascript)
 
