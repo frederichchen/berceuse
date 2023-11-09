@@ -11,10 +11,11 @@
 
 ;; Basic configurations for python programming language with eglot
 ;; Prerequisite: you must install pylsp e.g pip install "python-lsp-server[all]"
+;; It is recommended to set the venv folder to .venv or venv in order for pyvenv-auto to switch to your virtual environment
 
 ;;; Code:
 
-(berceuse-require-packages '(eglot python-black))
+(berceuse-require-packages '(eglot python-black pyvenv-auto))
 
 (use-package python
   :hook
@@ -32,6 +33,10 @@
   :after python
   :hook (python-mode . python-black-on-save-mode))
 
+(use-package pyvenv-auto
+  :hook ((python-mode . pyvenv-auto-run)))
+
 (provide 'berceuse-python-eglot)
 
 ;;; berceuse-python-eglot.el ends here
+
