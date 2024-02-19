@@ -19,7 +19,7 @@
 ;;; Code:
 
 ;; Check the version of GNU Emacs
-(when (version< emacs-version "26")
+(when (version< emacs-version "27")
   (message "Your Emacs is too old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
 ;; Start the server

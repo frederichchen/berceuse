@@ -17,6 +17,7 @@
 ;;(require 'berceuse-ido) ;; Super charges Emacs completion for C-x C-f and more
 (require 'berceuse-ivy) ;; A mighty modern alternative to ido
 (require 'berceuse-company) ;; An auto complete framework, alternative to auto-complete
+(require 'berceuse-dape)
 (require 'berceuse-yasnippet)
 
 ;; (require 'berceuse-csv)  ;; csv editing settings with csv-mode and csv-nav
