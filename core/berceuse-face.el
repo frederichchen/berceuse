@@ -20,7 +20,8 @@
 ;; disable startup screen
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
-(toggle-frame-maximized)
+					; (toggle-frame-maximized)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 (setq-default initial-scratch-message
