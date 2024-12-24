@@ -22,6 +22,7 @@
 (setq inhibit-startup-echo-area-message t)
 					; (toggle-frame-maximized)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(cursor-color . "white"))
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 (setq-default initial-scratch-message
