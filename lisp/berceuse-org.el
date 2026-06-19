@@ -18,9 +18,14 @@
 (defun org-mode-setup ()
   "Set up the 'org-mode initialization hook."
   (org-indent-mode)
-  (variable-pitch-mode 1)
+  ;(variable-pitch-mode 1)
   (visual-line-mode 1)
-  (setq truncate-lines nil))
+  (setq truncate-lines nil)
+  ;; set the fonts for org-mode, compatible with windows
+  (set-face-attribute 'variable-pitch nil
+		      :family "Sans-serif")
+  (set-face-attribute 'fixed-pitch nil
+		    :family "Adobe Source Code Pro"))
 
 (use-package org
   :hook (org-mode . org-mode-setup)
