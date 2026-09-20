@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-ido.el --- Configurations for ido together with smex.
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

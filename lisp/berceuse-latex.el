@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-latex.el --- Configurations for latex editing
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

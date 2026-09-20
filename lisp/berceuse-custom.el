@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-packages.el --- package management
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

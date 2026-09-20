@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-javascript.el --- Configurations for javascript programming
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

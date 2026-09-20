@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-scheme.el --- Configurations for scheme programming
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-editor.el --- Set some options of the editor for better experiences.
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-org.el --- org-mode configuration.
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
@@ -18,14 +19,15 @@
 (defun org-mode-setup ()
   "Set up the 'org-mode initialization hook."
   (org-indent-mode)
-  ;(variable-pitch-mode 1)
+  (variable-pitch-mode 1)
   (visual-line-mode 1)
   (setq truncate-lines nil)
-  ;; set the fonts for org-mode, compatible with windows
-  (set-face-attribute 'variable-pitch nil
-		      :family "Sans-serif")
-  (set-face-attribute 'fixed-pitch nil
-		    :family "Adobe Source Code Pro"))
+  ;; set the fonts for org-mode, compatible with windows, main typeface
+  (set-face-attribute 'default nil :family "Fira Code Retina" :height 180)
+  ;; Proportionately spaced typeface
+  (set-face-attribute 'variable-pitch nil :family "Fira Code Retina" :height 1.0)
+  ;; Monospaced typeface
+  (set-face-attribute 'fixed-pitch nil :family "Source Code Pro" :height 1.0))
 
 (use-package org
   :hook (org-mode . org-mode-setup)

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-face.el --- Set the ui and theme of Emacs
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

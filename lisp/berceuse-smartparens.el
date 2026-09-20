@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-smartparens.el --- Configurations for smartparens
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-coffee.el --- Configurations for CoffeeScript Programmingx
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

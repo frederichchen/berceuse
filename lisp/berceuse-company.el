@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-company.el --- Configurations for company-mode
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

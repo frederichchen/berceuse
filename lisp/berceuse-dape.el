@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-dape.el --- Configurations of Debug Adapter Protocol for Emacs
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

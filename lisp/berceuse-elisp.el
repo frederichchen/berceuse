@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-elisp.el --- Configurations for Elisp programming.
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

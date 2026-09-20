@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-funcs.el --- some frequently used functions
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

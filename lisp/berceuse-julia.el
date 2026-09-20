@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-julia.el --- Configurations for julia programming
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

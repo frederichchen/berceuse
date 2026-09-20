@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-flycheck.el --- Configuration for flycheck, I also use flycheck-color-mode-line for better result.
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

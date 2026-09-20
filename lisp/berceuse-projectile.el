@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-projectile.el --- Configurations for projectile, which depends on epl and pkg-info
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

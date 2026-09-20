@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-python.el --- Configurations for python programming with Anaconda
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-whitespace.el --- Use whitespace-cleanup-mode to clean the whitespaces.
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

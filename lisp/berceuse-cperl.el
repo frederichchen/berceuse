@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-cperl.el --- configurations for c & perl
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

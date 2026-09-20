@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-python-eglot.el --- Configurations for python programming with eglot
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

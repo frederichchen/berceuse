@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-csv.el --- csv editing settings with csv-mode and csv-nav
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

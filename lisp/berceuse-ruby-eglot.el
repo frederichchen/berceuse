@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-ruby-eglot.el --- Configurations for ruby programming with eglot
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

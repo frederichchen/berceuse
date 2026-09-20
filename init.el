@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; init.el --- Bootstrap Configuration File
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

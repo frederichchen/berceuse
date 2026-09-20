@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-yasnippet.el --- Configurations for yasnippet
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-plugins.el --- Choose the plugins you need
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-web.el --- Configurations for web development
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>

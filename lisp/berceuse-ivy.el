@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; berceuse-ivy.el --- Configurations for ivy-mode, together with counsel.
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
