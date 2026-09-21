@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; custom-example.el --- An example of customization.
 
 ;; Author: Frederich Chen <frederichchen@hotmail.com>
